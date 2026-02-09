@@ -5,18 +5,18 @@
 
 int main(){
 
-    char name[] = "Yoo i am rouven";
-    printf("Hello, %s\n", name);
-
     bool isOnline = true; // 1 == true, 0 == false
-    printf("%d\n", isOnline);
+    int num1 = 1;
+    int num2 = 10;
+    float num3 = -100.23;
 
-    if(isOnline){
-        printf("You are ONLINE\n");
-    }
-    else{
-        printf("you are offline\n");
-    }
+    printf("%+d\n", num1);
+    printf("%+d\n", num2);
+    printf("%+10.2f\n", num3);
+
+
+
+
 
     return 0;
 
