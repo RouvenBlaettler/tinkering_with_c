@@ -6,15 +6,23 @@
 int main(){
 
     bool isOnline = true; // 1 == true, 0 == false
-    int num1 = 1;
-    int num2 = 10;
-    float num3 = -100.23;
+    int x = 2;
+    float y = 3;
+    float z = 0; //you need to change values to floats to get correct result when dividing
 
-    printf("%+d\n", num1);
-    printf("%+d\n", num2);
-    printf("%+10.2f\n", num3);
+    int age = 0;
+    float gpa = 0.0f;
+    char grade = '\0';
+    char fullname[30] = "";
 
+    printf("type ur grade:\n");
+    scanf("%c", &grade); //& = adress of age //scnaf can't read spaces
+    printf(" %c\n", grade); // space means skipping input buffer
 
+    getchar(); //clears input buffer
+    printf("enter your full name:");
+    fgets(fullname, sizeof(fullname), stdin); //sizeof = 30
+    printf("%s", fullname);
 
 
 
