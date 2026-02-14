@@ -1,27 +1,28 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <string.h>
 
-void hbd(char name[], int age){
-    printf("Happy Birthday %s %d\n", name, age);
-}
+void hello(char name[], int age); //function prototype
+bool ageCheck(int age);
 
 int main() { // && || !
 
-    char name[50] = "";
-    int age = 0;
-
-    printf("type your name: ");
-    fgets(name, sizeof(name), stdin);
-    name[strlen(name)-1] = '\0';
-    printf("Enter your age: ");
-    scanf("%d", &age);
-    
-    hbd(name, age);
-    hbd(name, age);
-    hbd(name, age);
-    hbd(name, age);
+    hello("Spongebob", 30);
 
     return 0;
+}
 
+
+void hello(char name[], int age){
+    printf("Hello %s\n", name);
+    printf("You are %d years old\n", age);
+}
+
+bool ageCheck(int age){
+    if(age >= 16){
+        return true;
+    }
+    else{
+        return false;
+    }
+    
 }
