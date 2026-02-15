@@ -1,28 +1,21 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <time.h>
 
 
 int main() { // && || !
 
-    int rows = 0;
-    int columns = 0;
-    char symbol = '\0';
+    srand(time(NULL));
+    int min = 50;
+    int max = 100;
 
-    printf("How many rows: ");
-    scanf("%d", &rows);
-    printf("How many columns: ");
-    scanf("%d", &columns);
-    printf("What symbol: ");
-    scanf(" %c", &symbol);
+    int randomNum1 = (rand() % (max - min + 1)) + min;
+    int randomNum2 = (rand() % (max - min + 1)) + min;
+    int randomNum3 = (rand() % (max - min + 1)) + min;
 
-    for(int j = 1; j <= rows; j++){
-        for(int i = 1; i <= columns; i++){
-        printf("%c", symbol);
-    }
-        printf("\n");
-    }
-
+    printf("\n%d, %d, %d\n", randomNum1, randomNum2, randomNum3);
     
 
     return 0;
