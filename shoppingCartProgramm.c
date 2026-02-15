@@ -1,25 +1,44 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
 
 int main() {
-    char item[50] = "";
-    float price = 0.0f;
-    int quantity = 0;
-    char currency = '$';
-    float total = 0.0f;
+    //NUMBER GUESSING GAME
 
-    printf("What item would you like to buy?: ");
-    fgets(item, sizeof(item), stdin);
-    item[strlen(item)-1] = '\0';
-    printf("What is the price for each?: ");
-    scanf("%f", &price);
-    printf("How many would you like?: ");
-    scanf("%d", &quantity);
+    srand(time(NULL));
 
-    total = price * quantity;
+    int guess = 0;
+    int tries = 0;
+    int min = 1;
+    int max = 100;
+    int answer = (rand() % (max -min + 1)) + min;
 
-    printf("\nYou have bought %d %s/s\n", quantity, item);
-    printf("%c%.2f\n",currency, total);
+    printf("NUMBER GUESSING GAME\n");
+    do{
+        printf("Make a guess between %d - %d: ", min, max);
+        scanf(" %d", &guess);
+        tries ++;
+        if(guess > answer){
+            printf("TOO HIGH!");
+        }
+        else if(guess < answer){
+            printf("TOO LOW!");
+        }
+        else{
+            printf("CORRECT");
+        }
+        printf("\n");
+
+    }
+    while(guess != answer);
+
+    printf("\nThe answer is %d\n", answer);
+    printf("You needed %d tries\n", tries);
+
+    
+
 
 
     return 0;
