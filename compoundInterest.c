@@ -5,13 +5,25 @@
 
 int main() { // && || !
 
-    for(int i = 10; i >= 0; i--){
-        sleep(1);
-        printf("%d\n", i);
+    int rows = 0;
+    int columns = 0;
+    char symbol = '\0';
+
+    printf("How many rows: ");
+    scanf("%d", &rows);
+    printf("How many columns: ");
+    scanf("%d", &columns);
+    printf("What symbol: ");
+    scanf(" %c", &symbol);
+
+    for(int j = 1; j <= rows; j++){
+        for(int i = 1; i <= columns; i++){
+        printf("%c", symbol);
+    }
+        printf("\n");
     }
 
-    printf("Happy New Year\n");
+    
 
     return 0;
 }
-
