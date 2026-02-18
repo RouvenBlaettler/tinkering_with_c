@@ -1,24 +1,18 @@
 #include<stdio.h>
 #include<math.h>
 
+typedef int Number;
+typedef char String[50];
+typedef char Initials[3];
+
 int main() {
-    double radius = 0.0;
-    double area = 0.0;
-    double surfaceArea = 0.0;
-    double volume = 0.0;
-    const double PI = 3.14159;
+    
+    Number x = 7;
 
+    Initials user = "RB";
 
-    printf("\nEnter the radius: ");
-    scanf("%lf", &radius);
+    String name = "Bro Code";
 
-    area = PI * pow(radius, 2);
-    surfaceArea = 4 * PI * pow(radius, 2);
-    volume = (4.0/3.0) * PI * pow(radius, 3);
-
-    printf("\nArea: %.2lf\n", area);
-    printf("Surface: %.2lf\n", surfaceArea);
-    printf("Volume: %.2lf\n", volume);
 
     return 0;
 
