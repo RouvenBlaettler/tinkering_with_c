@@ -1,38 +1,45 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int main() {
-    char noun[50] = "";
-    char verb[50] = "";
-    char adjective1[50] = "";
-    char adjective2[50] = "";
-    char adjective3[50] = "";
+    char questions[][100] = {"What is the largest planet in the solar system",
+                            "What is the hottest planet?",
+                            "What planet has the most moons?"};
+    
+    char options[][100] = {"A. Jupyter\nB. Saturn\nC. Uranus\nD. Neptune\n", 
+                            "A. Jupyter\nB. Venus\nC. Uranus\nD. Neptune\n",
+                            "A. Jupyter\nB. Earth\nC. Uranus\nD. Saturn\n"};
 
-    printf("Enter an adjective (description): ");
-    fgets(adjective1, sizeof(adjective1), stdin);
-    adjective1[strlen(adjective1)-1] = '\0';
+    char answerKey[] = {'A', 'B', 'D'};
 
-    printf("Enter a noun (animal or person): ");
-    fgets(noun, sizeof(noun), stdin);
-    noun[strlen(noun)-1] = '\0';
+    int questionCount = sizeof(questions) / sizeof(questions[0]);
 
-    printf("Enter an adjective (description): ");
-    fgets(adjective2, sizeof(adjective2), stdin);
-    adjective2[strlen(adjective2)-1] = '\0';
+    char guess = '\0';
 
-    printf("Enter a verb (ending w/ -ing): ");
-    fgets(verb, sizeof(verb), stdin);
-    verb[strlen(verb)-1] = '\0';
+    int score = 0;
 
-    printf("Enter an adjective (desciription): ");
-    fgets(adjective3, sizeof(adjective3), stdin);
-    adjective3[strlen(adjective3)-1] = '\0';
 
-    printf("\nToday I went to a %s zoo.\n", adjective1);
-    printf("In an exhibit, I saw a %s.\n", noun);
-    printf("%s was %s and %s!\n", noun, adjective2, verb);
-    printf("I was %s!\n", adjective3);
+    printf("QUIZ GAME");
 
+    for(int i = 0; i  < questionCount; i++){
+        printf("%s\n", questions[i]);
+        printf("%s", options[i]);
+        printf("Enter your choice: ");
+        scanf(" %c", &guess);
+
+        guess = toupper(guess);
+
+        if(guess == answerKey[i]){
+            printf("Correct\n");
+            score++;
+        }
+        else{
+            printf("Wrong\n");
+        }
+    }
+    printf("\nYour score is %d out of %d\n", score, questionCount);
+    
 
     return 0;
 }

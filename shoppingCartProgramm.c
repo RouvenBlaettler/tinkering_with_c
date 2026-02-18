@@ -19,7 +19,7 @@ int main() {
     do{
         printf("Make a guess between %d - %d: ", min, max);
         scanf(" %d", &guess);
-        tries ++;
+        tries ++;     
         if(guess > answer){
             printf("TOO HIGH!");
         }
