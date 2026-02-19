@@ -10,9 +10,8 @@ typedef enum{
 typedef struct{
     char name[50];
     int age;
-    float gpa;
-    bool fullTime;
-}Student;
+    float price;
+}Car;
 
 int main() {
     
@@ -22,14 +21,17 @@ int main() {
 
     days today = WENDSDAY;
 
-    Student peter = {"Peter", 12, 3.3, true};
-    Student tim = {0};
+    Car cars[] = {{"turbo", 2025, 1000.00}, {"cleano", 2020, 10500.00}};
 
-    printf("%d\n", today);
-    printf("%s\n", peter.name);
-    printf("%d\n", peter.age);
-    printf("%f\n", peter.gpa);
-    printf("%s\n", (peter.fullTime) ? "yes" : "no");
+    int number = sizeof(cars) / sizeof(cars[0]);
+
+    for(int i = 0; i < number; i++){
+        printf("%s, %d, %f\n", cars[i].name, cars[i].age, cars[i].price);
+    }
+
+
+    
+
     return 0;
 
     
