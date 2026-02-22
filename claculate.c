@@ -5,20 +5,21 @@
 
 int main() {
 
-    FILE *pFile = fopen("output.txt", "w");
+    FILE *pFile = fopen("input.txt", "r");
+    char buffer[1024] = {0};
 
 
-    char text[] = "I WRITE A FILE\nOOHHHHH YEAHHH BUDDY";
+
 
     if(pFile == NULL){
         printf("eroor opening file\n");
         return 1;
     }
 
+    while(fgets(buffer, sizeof(buffer), pFile) != 0){
+        printf("%s", buffer);
 
-    fprintf(pFile, "%s", text);
-
-    printf("File was written successfully\n");
+    }
 
     fclose(pFile);
 
