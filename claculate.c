@@ -2,24 +2,25 @@
 #include<math.h>
 #include<stdbool.h>
 
-void birthday(int* age);
 
 int main() {
-   int age = 25;
-   int *pAge = &age;
 
-   birthday(pAge);
-
-   printf("You are %d years old\n", age);
+    FILE *pFile = fopen("output.txt", "w");
 
 
-    return 0;
+    char text[] = "I WRITE A FILE\nOOHHHHH YEAHHH BUDDY";
 
-    
-}
+    if(pFile == NULL){
+        printf("eroor opening file\n");
+        return 1;
+    }
 
-void birthday(int* age){
-    
-    (*age)++;
 
+    fprintf(pFile, "%s", text);
+
+    printf("File was written successfully\n");
+
+    fclose(pFile);
+
+    return 0;    
 }
